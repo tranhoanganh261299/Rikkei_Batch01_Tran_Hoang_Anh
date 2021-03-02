@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="cf1c4756-465b-40d5-b6c5-f1f049a99fac" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1p3PJpjsU7e5aFqCmsyXAyxG2aD" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../HTML_CSS" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\JAVA_WEB\bao_web\bootraps" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="html.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/bao_web/html.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.html.html" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cf1c4756-465b-40d5-b6c5-f1f049a99fac" name="Default Changelist" comment="" />
+      <created>1614408731553</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1614408731553</updated>
+      <workItem from="1614408733034" duration="4057000" />
+      <workItem from="1614447357666" duration="13212000" />
+      <workItem from="1614604943125" duration="8266000" />
+      <workItem from="1614652474545" duration="27378000" />
+      <workItem from="1614683736400" duration="4566000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="275" y="46" key="#Inspections" timestamp="1614684314416">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="275" y="46" key="#Inspections/0.0.1366.768@0.0.1366.768" timestamp="1614684314416" />
+    <state x="463" y="143" key="FileChooserDialogImpl" timestamp="1614688493142">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="463" y="143" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1614688493142" />
+    <state x="352" y="6" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1614673466125">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="352" y="6" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1366.768@0.0.1366.768" timestamp="1614673466125" />
+    <state x="390" y="18" width="586" height="732" key="find.popup" timestamp="1614490132351">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="390" y="18" width="586" height="732" key="find.popup/0.0.1366.768@0.0.1366.768" timestamp="1614490132351" />
+  </component>
+</project>
