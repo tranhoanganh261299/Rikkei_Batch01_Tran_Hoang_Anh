@@ -140,7 +140,7 @@
         var service = document.getElementById("service").value;
         var room = document.getElementById("room").value;
         var datalistTag = document.getElementById("dataList"),value;
-        if(checkEmail()){
+        if(checkEmail()||checkCMND()){
             var gia=0;
             if (service=="Villa"){
                 gia = 500*rentDay*(1-sale/100);
@@ -175,7 +175,7 @@
                 + "<td>"+birthday+"</td>" + "<td>"+email+"</td>" + "<td>"+adress+"</td>" + "<td>"+loaik+"</td>" + "<td>"+sale+"</td>"
                 + "<td>"+soluong+"</td>" + "<td>"+rentDay+"</td>" + "<td>"+service+"</td>" + "<td>"+room+"</td>"+"<td>"+gia+"</td>"
         }
-
+        else 
     }
     $(function () {
         $("#datepicker").datepicker({
