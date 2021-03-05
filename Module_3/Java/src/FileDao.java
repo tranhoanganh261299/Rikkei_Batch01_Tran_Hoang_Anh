@@ -1,8 +1,6 @@
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.Scanner;
 
 
 public class FileDao {
@@ -66,7 +64,7 @@ public class FileDao {
         FileInputStream fos = null;
         ObjectInputStream oos = null;
         try {
-            fos = new FileInputStream(new File("dochoi_treem.csv"));
+            fos = new FileInputStream(new File("dochoi_treem.txt"));
             oos = new ObjectInputStream(fos);
             SachList = (List<SP_DoChoiTreEm>)oos.readObject();
         }catch (FileNotFoundException e) {
@@ -116,6 +114,41 @@ public class FileDao {
             closeStream(oos);
         }
         return SachList;
+    }
+
+    public void ghiFileDonHang(List<HoaDon>HDList){
+        FileOutputStream fos = null;
+        ObjectOutputStream oos = null;
+        try {
+            fos = new FileOutputStream(new File("hoandon.txt"));
+            oos = new ObjectOutputStream(fos);
+            oos.writeObject(HDList);
+        }catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        finally {
+            closeStream(fos);
+            closeStream(oos);
+        }
+    }
+    public List<HoaDon> readFileHoaDon(){
+        List<HoaDon> HDL = new ArrayList<>();
+        FileInputStream fos = null;
+        ObjectInputStream oos = null;
+        try {
+            fos = new FileInputStream(new File("hoadon.txt"));
+            oos = new ObjectInputStream(fos);
+            HDL = (List<HoaDon>)oos.readObject();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        finally {
+            closeStream(fos);
+            closeStream(oos);
+        }
+        return HDL;
     }
 
     private void closeStream(OutputStream fos) {

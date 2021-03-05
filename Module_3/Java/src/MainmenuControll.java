@@ -5,7 +5,7 @@ public class MainmenuControll {
     public static Scanner scanner = new Scanner(System.in);
     ListSach sachmanager = new ListSach();
     ListDoChoi doChoiTreEmmanager = new ListDoChoi();
-    DungCuHocTapManeger dungCuHocTapManeger = new DungCuHocTapManeger();
+    ListDungCu dungCuHocTapManeger = new ListDungCu();
     HoaDonManeger hoaDonManeger = new HoaDonManeger();
 
     public void menu() {

@@ -1,114 +1,92 @@
+import java.io.Serializable;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 
-public class SanPhamSach extends SanPham{
-    private String nhaXb;
-    private String namXB = "^\\d{4}$";
-    private String tenTG;
-    private Date ngayXB;
-    private int lanTaiBan;
+public class SanPhamSach extends SanPham implements Serializable {
+    protected String NhaXuatBan;
+    protected Date NamSanXuat;
+    protected String TacGia;
+    protected Date NgaySX;
+    protected int LanTaiBan;
 
-    public SanPhamSach() {
-        super();
+    @Override
+    public String toString() {
+        return "SanPhamSach{" +
+                "NhaXuatBan='" + NhaXuatBan + '\'' +
+                ", NamSanXuat=" + NamSanXuat +
+                ", TacGia='" + TacGia + '\'' +
+                ", NgaySX=" + NgaySX +
+                ", LanTaiBan=" + LanTaiBan +
+                ", MaSanPham='" + MaSanPham + '\'' +
+                ", TenSanPham='" + TenSanPham + '\'' +
+                ", Soluong='" + Soluong + '\'' +
+                ", Dongia=" + Dongia +
+                ", TenDM='" + TenDM + '\'' +
+                '}';
     }
 
-   // @Override
-    /*public void NhapThongTin() {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("nhap ma sach");
-        setMaSP(sc.nextLine());
-        System.out.println("Nhap ten san sach");
-        setTenSp(sc.nextLine());
-        System.out.println("Nhap so luong");
-        setSoLuong(Integer.parseInt(sc.nextLine()));
-        System.out.println("Don gia");
-        setDonGia(sc.nextFloat());
-        System.out.println("Danh Muc");
-        setTenSp(sc.nextLine());
-        System.out.println("Nha xuat ban");
-        nhaXb = sc.nextLine();
-        System.out.println("Nam xuat ban");
-        namXB = sc.nextLine();
-        System.out.println("Tac gia");
-        tenTG = sc.nextLine();
-        System.out.println("Ngay xuat ban");
-        try {
-            ngayXB = new SimpleDateFormat("dd/MM/yyyy").parse(sc.nextLine());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        System.out.println("Nhap Lan tai ban");
-        lanTaiBan = Integer.parseInt(sc.nextLine());
-    }*/
-
-    public SanPhamSach(String maSP, String tenSp, int soLuong, float donGia, String maDM, String nhaXb, String namXB, String tenTG, Date ngayXB, int lanTaiBan) {
-        super(maSP,tenSp,soLuong,donGia,maDM);
-        this.nhaXb = nhaXb;
-        this.namXB = namXB;
-        this.tenTG = tenTG;
-        this.ngayXB = ngayXB;
-        this.lanTaiBan = lanTaiBan;
+    public SanPhamSach(String maSanPham, String tenSanPham, int soluong, int dongia, String tenDM, String nhaXuatBan, Date namSanXuat, String tacGia, Date ngaySX, int lanTaiBan) {
+        super(maSanPham, tenSanPham, soluong, dongia, tenDM);
+        NhaXuatBan = nhaXuatBan;
+        NamSanXuat = namSanXuat;
+        TacGia = tacGia;
+        NgaySX = ngaySX;
+        LanTaiBan = lanTaiBan;
     }
 
-    public String getNhaXb() {
-        return nhaXb;
+    public String getNhaXuatBan() {
+        return NhaXuatBan;
     }
 
-    public void setNhaXb(String nhaXb) {
-        this.nhaXb = nhaXb;
+    public void setNhaXuatBan(String nhaXuatBan) {
+        NhaXuatBan = nhaXuatBan;
     }
 
-    public String getNamXB() {
-        return namXB;
+    public Date getNamSanXuat() {
+        return NamSanXuat;
     }
 
-    public void setNamXB(String namXB) {
-        this.namXB = namXB;
+    public void setNamSanXuat(Date namSanXuat) {
+        NamSanXuat = namSanXuat;
     }
 
-    public String getTenTG() {
-        return tenTG;
+    public String getTacGia() {
+        return TacGia;
     }
 
-    public void setTenTG(String tenTG) {
-        this.tenTG = tenTG;
+    public void setTacGia(String tacGia) {
+        TacGia = tacGia;
     }
 
-    public Date getNgayXB() {
-        return ngayXB;
+    public Date getNgaySX() {
+        return NgaySX;
     }
 
-    public void setNgayXB(Date ngayXB) {
-        this.ngayXB = ngayXB;
+    public void setNgaySX(Date ngaySX) {
+        NgaySX = ngaySX;
     }
 
     public int getLanTaiBan() {
-        return lanTaiBan;
+        return LanTaiBan;
     }
 
     public void setLanTaiBan(int lanTaiBan) {
-        this.lanTaiBan = lanTaiBan;
+        LanTaiBan = lanTaiBan;
     }
 
     @Override
-    public void HienThiThongTin() {
-        System.out.println("Ma SP" + getMaSP());
-        System.out.println("Ten SP" + getTenSp());
-        System.out.println("So luong SP" + getSoLuong());
-        System.out.println("Don Gia SP" + getDonGia());
-        System.out.println("Danh Muc SP" + getMaDM());
-        System.out.println("Nha xb SP" + nhaXb);
-        System.out.println("Năm sx" + namXB);
-        System.out.println("Tác gia" + tenTG);
-        System.out.println("Ngay XB" + ngayXB);
-        System.out.println("Lan tai ban" + lanTaiBan);
+    public void HienThiSanPham() {
+        System.out.println(this.toString());
     }
 
     @Override
-    public double PhanTramGiamGia(String loaikh) {
-        return  loaikh.equals("Thuong")? 0.02:loaikh.equals("Vip1")?0.05:0.1;
+    public void PhanTramGiamGia(String Loaikh) {
+        if(Loaikh =="Vip 1") System.out.println("Giảm 5%");
+        else if(Loaikh=="Vip 2") System.out.println("Giam 10%");
+        else System.out.println("Giam gia 2%");
+
     }
 
 }

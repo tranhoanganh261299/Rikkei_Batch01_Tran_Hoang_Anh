@@ -25,7 +25,7 @@ public class ListDungCu {
         String KichThuoc = inputKichThuoc();
         SP_DoDungHocTap dungCuHocTap = new SP_DoDungHocTap(MaSp,TenSp,SoLuong,DonGia,DanhMuc,XuatXu,ThuongHieu,NhaCC,HDSD,MauSac,ChatLieu,KichThuoc);
         DungCuList.add(dungCuHocTap);
-        fileDao.readFileDungCu();
+        fileDao.ghiFileDungCu(DungCuList);
 
     }
     private String inputMaSP() {
@@ -76,14 +76,14 @@ public class ListDungCu {
         System.out.print("Input Kich Thuoc: ");
         return scanner.nextLine();
     }
-    public List<DungCuHocTap> getDungCuHocTapList(){
-        return dungCuHocTapList;
+    public List<SP_DoDungHocTap> getDungCuHocTapList(){
+        return DungCuList;
     }
-    public void setDungCuHocTapList(List<DungCuHocTap> SachList){
-        this.dungCuHocTapList = dungCuHocTapList;
+    public void setDungCuHocTapList(List<SP_DoDungHocTap> dungCuHocTapListList){
+        this.DungCuList = dungCuHocTapListList;
     }
     public void show() {
-        for (DungCuHocTap dungCuHocTap : dungCuHocTapList) {
+        for (SP_DoDungHocTap dungCuHocTap : DungCuList) {
             System.out.format("%s |", dungCuHocTap.getMaSanPham());
             System.out.format("%5s |", dungCuHocTap.getTenSanPham());
             System.out.format("%5d |", dungCuHocTap.getSoluong());
