@@ -4,77 +4,106 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ListSach {
-    public static Scanner sc = new Scanner(System.in);
+    public static Scanner scanner = new Scanner(System.in);
     private List<SanPhamSach> SachList;
-    private FileDao fileDao;
+    private SanPhamSachDAO sachDAO;
 
     public ListSach() {
-       fileDao  = new FileDao();
-       SachList = fileDao.readFile();
+        sachDAO = new SanPhamSachDAO();
+        SachList = sachDAO.read();
     }
-    public  void  add(){
-        String maSP= inPutMasp();
-        String tenSach= inPutSach();
-        int soluong= inPutSL();
-        float dongia= inPutDonGia();
-        String danhmuc= inputDanhMuc();
-        String nhaXB= inputNXB();
-        String namsx= inputNamXB();
-        String tacgia= inputTacGia();
-        Date ngayXB= inputNgay();
-        int taiban =  inputTaiBan();
-        SanPhamSach sach = new SanPhamSach(maSP, tenSach,soluong,dongia, danhmuc,nhaXB,namsx,tacgia,ngayXB,taiban);
-        SachList.add(sach);
-        fileDao.ghiFile(SachList);
+    public void add(){
+        String MaSp =inputMaSP();
+        String TenSp=inputTenSP();
+        Integer SoLuong = inputSoLuong();
+        Integer DonGia = inputDonGia();
+        String DanhMuc = inputDanhMuc();
+        String NhaSX = inputNhaSX();
+        Date NamSX = inputNamSX();
+        String TacGia = inputTacGia();
+        Date NgaySB = inputNgayXB();
+        Integer TaiBan = inputLanTaiBan();
+        SanPhamSach sanPhamSach = new SanPhamSach(MaSp,TenSp,SoLuong,DonGia,DanhMuc,NhaSX,NamSX,TacGia,NgaySB,TaiBan);
+        SachList.add(sanPhamSach);
+        sachDAO.wirte(SachList);
 
     }
-    public String inPutMasp(){
-        System.out.println("nhap ma sach");
-        return sc.nextLine();
+    public void edit(){
+
+
     }
-    public String inPutSach(){
-        System.out.println("Nhap ten san sach");
-        return (sc.nextLine());
+    private String inputMaSP() {
+        System.out.print("Input MASP: ");
+        return scanner.nextLine();
     }
-    public int inPutSL() {
-        System.out.println("Nhap so luong");
-        return (Integer.parseInt(sc.nextLine()));
+    private String inputTenSP() {
+        System.out.print("Input TenSP: ");
+        return scanner.nextLine();
     }
-    public float inPutDonGia(){
-        System.out.println("Don gia");
-        return Float.parseFloat(sc.nextLine());
+    private int inputSoLuong() {
+        System.out.print("Input So Luong: ");
+        return Integer.parseInt((scanner.nextLine()));
     }
-    public String inputDanhMuc(){
-        System.out.println("Danh Muc");
-        return (sc.nextLine());
+    private int inputDonGia() {
+        System.out.print("Input Don Gia: ");
+        return  Integer.parseInt((scanner.nextLine()));
     }
-    public String inputNXB(){
-        System.out.println("Nha xuat ban");
-        return sc.nextLine();
+    private String inputDanhMuc() {
+        System.out.print("Input Danh Muc: ");
+        return scanner.nextLine();
     }
-     public String inputNamXB(){
-         System.out.println("Nam xuat ban");
-         String namXB = "^\\d{4}$";
-         namXB = sc.nextLine();
-         return namXB;
-     }
-     public String inputTacGia(){
-         System.out.println("Tac gia");
-         return sc.nextLine();
-     }
-    public Date inputNgay(){
-        System.out.println("Ngay xuat ban");
-        Date ngayXB = new Date();
+    private String inputNhaSX() {
+        System.out.print("Input Nha San Xuat: ");
+        return scanner.nextLine();
+    }
+    private Date inputNamSX() {
+        System.out.print("Input Nam SX: ");
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        Date date = new Date();
         try {
-            ngayXB = new SimpleDateFormat("dd/MM/yyyy").parse(sc.nextLine());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return ngayXB;
+            date = formatter.parse(scanner.nextLine());
+        } catch (Exception e){}
+        return date;
     }
-     public int inputTaiBan(){
-         System.out.println("Nhap Lan tai ban");
-         return Integer.parseInt(sc.nextLine());
-     }
+    private String inputTacGia() {
+        System.out.print("Input Tac Gia: ");
+        return scanner.nextLine();
+    }
+    private Date inputNgayXB() {
+        System.out.print("Input Ngay Xuat Ban: ");
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        Date date = new Date();
+        try {
+            date = formatter.parse(scanner.nextLine());
+        } catch (Exception e){}
+        return date;
+    }
+    private int inputLanTaiBan() {
+        System.out.print("Input Lan Tai Ban: ");
+        return  Integer.parseInt((scanner.nextLine()));
+    }
+    public void show() {
+//        System.out.println("MaSP   "+"TenSP   "+"SoLuong   "+"DonGia   "+"TenDM   "+"NhaXuatBan   "+"NamXB   "+"TacGia  "+"NgaySX   "+"LanTaiBan   ");
+
+        for (SanPhamSach sach : SachList) {
+            System.out.format("%s |", sach.getMaSanPham());
+            System.out.format("%5s |", sach.getTenSanPham());
+            System.out.format("%5d |", sach.getSoluong());
+            System.out.format("%5d |", sach.getDongia());
+            System.out.format("%5s |", sach.getTenDM());
+            System.out.format("%5s |", sach.getNhaXuatBan());
+            System.out.format("%15s |", sach.getNamSanXuat());
+            System.out.format("%5s |", sach.getTacGia());
+            System.out.format("%15s |", sach.getNgaySX());
+            System.out.format("%5d\n", sach.getLanTaiBan());
+        }
+    }
+    public List<SanPhamSach> getSachList(){
+        return SachList;
+    }
+    public void setSachList(List<SanPhamSach> SachList){
+        this.SachList = SachList;
+    }
+
 
 }

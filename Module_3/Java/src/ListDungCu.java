@@ -2,7 +2,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ListDungCu {
-    public static Scanner sc = new Scanner(System.in);
+    public static Scanner scanner = new Scanner(System.in);
     private List<SP_DoDungHocTap> DungCuList;
     private FileDao fileDao;
 
@@ -10,57 +10,93 @@ public class ListDungCu {
         fileDao  = new FileDao();
         DungCuList = fileDao.readFileDungCu();
     }
-    public  void  add(){
-        String maSP= inPutMasp();
-        String tenSp= inPutSach();
-        int soluong= inPutSL();
-        float dongia= inPutDonGia();
-        String danhmuc= inputDanhMuc();
-        String inputXX= inputXX();
-        String thuonghieu= inputThuongHieu();
-        String nhacc= NhaCC();
-        String huongdan= inputHD();
-        SP_DoDungHocTap dochoi = new SP_DoDungHocTap(maSP, tenSp, soluong, dongia, danhmuc, inputXX, thuonghieu, nhacc, huongdan) ;
-        DungCuList.add(dochoi);
-        fileDao.ghiFileDungCu(DungCuList);
+    public void add(){
+        String MaSp =inputMaSP();
+        String TenSp=inputTenSP();
+        Integer SoLuong = inputSoLuong();
+        Integer DonGia = inputDonGia();
+        String DanhMuc = inputDanhMuc();
+        String XuatXu = inputXuatXu();
+        String ThuongHieu = inputThuongHieu();
+        String NhaCC = inputNhaCC();
+        String HDSD = inputHuongDSD();
+        String MauSac = inputMauSac();
+        String ChatLieu = inputChatLieu();
+        String KichThuoc = inputKichThuoc();
+        SP_DoDungHocTap dungCuHocTap = new SP_DoDungHocTap(MaSp,TenSp,SoLuong,DonGia,DanhMuc,XuatXu,ThuongHieu,NhaCC,HDSD,MauSac,ChatLieu,KichThuoc);
+        DungCuList.add(dungCuHocTap);
+        fileDao.readFileDungCu();
 
     }
+    private String inputMaSP() {
+        System.out.print("Input MASP: ");
+        return scanner.nextLine();
+    }
+    private String inputTenSP() {
+        System.out.print("Input TenSP: ");
+        return scanner.nextLine();
+    }
+    private int inputSoLuong() {
+        System.out.print("Input So Luong: ");
+        return Integer.parseInt((scanner.nextLine()));
+    }
+    private int inputDonGia() {
+        System.out.print("Input Don Gia: ");
+        return  Integer.parseInt((scanner.nextLine()));
+    }
+    private String inputDanhMuc() {
+        System.out.print("Input Danh Muc: ");
+        return scanner.nextLine();
+    }
+    private String inputXuatXu() {
+        System.out.print("Input Xuat Xu: ");
+        return scanner.nextLine();
+    }
+    private String inputThuongHieu() {
+        System.out.print("Input Thuong Hieu: ");
+        return scanner.nextLine();
+    }
+    private String inputNhaCC() {
+        System.out.print("Input Nha Cung Cap: ");
+        return scanner.nextLine();
+    }
+    private String inputHuongDSD() {
+        System.out.print("Input Huong Dan Su Dung: ");
+        return scanner.nextLine();
+    }
+    private String inputMauSac() {
+        System.out.print("Input Mau Sac: ");
+        return scanner.nextLine();
+    }
+    private String inputChatLieu() {
+        System.out.print("Input Chat Lieu: ");
+        return scanner.nextLine();
+    }
+    private String inputKichThuoc() {
+        System.out.print("Input Kich Thuoc: ");
+        return scanner.nextLine();
+    }
+    public List<DungCuHocTap> getDungCuHocTapList(){
+        return dungCuHocTapList;
+    }
+    public void setDungCuHocTapList(List<DungCuHocTap> SachList){
+        this.dungCuHocTapList = dungCuHocTapList;
+    }
+    public void show() {
+        for (DungCuHocTap dungCuHocTap : dungCuHocTapList) {
+            System.out.format("%s |", dungCuHocTap.getMaSanPham());
+            System.out.format("%5s |", dungCuHocTap.getTenSanPham());
+            System.out.format("%5d |", dungCuHocTap.getSoluong());
+            System.out.format("%5d |", dungCuHocTap.getDongia());
+            System.out.format("%5s |", dungCuHocTap.getTenDM());
+            System.out.format("%5s |", dungCuHocTap.getXuatXu());
+            System.out.format("%5s |", dungCuHocTap.getThuongHieu());
+            System.out.format("%5s |", dungCuHocTap.getNhaCC());
+            System.out.format("%5s |", dungCuHocTap.getHuongDanSD());
+            System.out.format("%5s |", dungCuHocTap.getMauSac());
+            System.out.format("%5s |", dungCuHocTap.getChatLieu());
+            System.out.format("%5s\n", dungCuHocTap.getKichThuoc());
 
-
-    public String inPutMasp(){
-        System.out.println("nhap ma sp");
-        return sc.nextLine();
-    }
-    public String inPutSach(){
-        System.out.println("Nhap ten san sp");
-        return (sc.nextLine());
-    }
-    public int inPutSL() {
-        System.out.println("Nhap so luong");
-        return (Integer.parseInt(sc.nextLine()));
-    }
-    public float inPutDonGia(){
-        System.out.println("Don gia");
-        return Float.parseFloat(sc.nextLine());
-    }
-    public String inputDanhMuc(){
-        System.out.println("Danh Muc");
-        return (sc.nextLine());
-    }
-    public String inputXX(){
-        System.out.println("Xuat xu");
-        return sc.nextLine();
-    }
-    public String inputThuongHieu(){
-        System.out.println("Thuong hieu");
-        return sc.nextLine();
-    }
-    public String NhaCC(){
-        System.out.println("ncc");
-        return sc.nextLine();
-    }
-    public String inputHD() {
-        System.out.println("Huong dan su dung");
-        return sc.nextLine();
+        }
     }
 }

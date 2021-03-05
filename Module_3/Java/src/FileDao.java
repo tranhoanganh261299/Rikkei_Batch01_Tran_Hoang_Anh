@@ -31,10 +31,13 @@ public class FileDao {
             fos = new FileInputStream(new File(FILE_NAME));
             oos = new ObjectInputStream(fos);
             SachList = (List<SanPhamSach>)oos.readObject();
-        }catch (Exception e){
+        }catch (FileNotFoundException e) {
             e.printStackTrace();
-        }
-        finally {
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } finally {
             closeStream(fos);
             closeStream(oos);
         }
@@ -45,10 +48,12 @@ public class FileDao {
         FileOutputStream fos = null;
         ObjectOutputStream oos = null;
         try {
-            fos = new FileOutputStream(new File("dochoi_treem.csv"));
+            fos = new FileOutputStream(new File("dochoi_treem.txt"));
             oos = new ObjectOutputStream(fos);
             oos.writeObject(SachList);
-        }catch (Exception e){
+        }catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
             e.printStackTrace();
         }
         finally {
@@ -64,7 +69,11 @@ public class FileDao {
             fos = new FileInputStream(new File("dochoi_treem.csv"));
             oos = new ObjectInputStream(fos);
             SachList = (List<SP_DoChoiTreEm>)oos.readObject();
-        }catch (Exception e){
+        }catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
         finally {
@@ -81,7 +90,9 @@ public class FileDao {
             fos = new FileOutputStream(new File("dungcuhoctap.csv"));
             oos = new ObjectOutputStream(fos);
             oos.writeObject(SachList);
-        }catch (Exception e){
+        }catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
             e.printStackTrace();
         }
         finally {

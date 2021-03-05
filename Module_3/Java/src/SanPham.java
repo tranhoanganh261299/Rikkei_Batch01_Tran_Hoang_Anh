@@ -1,61 +1,57 @@
 public abstract class SanPham {
-    private String maSP;
-    private String tenSp;
-    private int soLuong;
-    private float donGia;
-    private String maDM;
+    protected String MaSanPham;
+    protected String TenSanPham;
+    protected int Soluong;
+    protected int Dongia;
+    protected String TenDM;
+    public abstract void HienThiSanPham();
+    public abstract void PhanTramGiamGia(String LoaKh);
 
-    public SanPham() {
+    public SanPham(String maSanPham, String tenSanPham, int soluong, int dongia, String tenDM) {
+        MaSanPham = maSanPham;
+        TenSanPham = tenSanPham;
+        Soluong = soluong;
+        Dongia = dongia;
+        TenDM = tenDM;
     }
 
-    public SanPham(String maSP, String tenSp, int soLuong, float donGia, String maDM) {
-        this.maSP = maSP;
-        this.tenSp = tenSp;
-        this.soLuong = soLuong;
-        this.donGia = donGia;
-        this.maDM = maDM;
+    public String getMaSanPham() {
+        return MaSanPham;
     }
 
-    public String getMaSP() {
-        return maSP;
+    public void setMaSanPham(String mabaSanPham) {
+        MaSanPham = mabaSanPham;
     }
 
-    public void setMaSP(String maSP) {
-        this.maSP = maSP;
+    public String getTenSanPham() {
+        return TenSanPham;
     }
 
-    public String getTenSp() {
-        return tenSp;
+    public void setTenSanPham(String tenSanPham) {
+        TenSanPham = tenSanPham;
     }
 
-    public void setTenSp(String tenSp) {
-        this.tenSp = tenSp;
+    public int getSoluong() {
+        return Soluong;
     }
 
-    public int getSoLuong() {
-        return soLuong;
+    public void setSoluong(int soluong) {
+        Soluong = soluong;
     }
 
-    public void setSoLuong(int soLuong) {
-        this.soLuong = soLuong;
+    public int getDongia() {
+        return Dongia;
     }
 
-    public float getDonGia() {
-        return donGia;
+    public void setDongia(int dongia) {
+        Dongia = dongia;
     }
 
-    public void setDonGia(float donGia) {
-        this.donGia = donGia;
+    public String getTenDM() {
+        return TenDM;
     }
 
-    public String getMaDM() {
-        return maDM;
+    public void setTenDM(String tenDM) {
+        TenDM = tenDM;
     }
-
-    public void setMaDM(String maDM) {
-        this.maDM = maDM;
-    }
-    //public abstract void NhapThongTin();
-    public abstract void HienThiThongTin();
-    public abstract double PhanTramGiamGia(String loaikh);
 }
