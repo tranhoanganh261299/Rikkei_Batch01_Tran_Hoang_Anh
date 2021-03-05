@@ -40,6 +40,7 @@ public class FileDao {
         }
         return SachList;
     }
+
     public void ghiFiledochoi(List<SP_DoChoiTreEm>SachList){
         FileOutputStream fos = null;
         ObjectOutputStream oos = null;
@@ -73,7 +74,7 @@ public class FileDao {
         return SachList;
     }
 
-    public void ghiFileDungCu(List<SanPhamSach>SachList){
+    public void ghiFileDungCu(List<SP_DoDungHocTap>SachList){
         FileOutputStream fos = null;
         ObjectOutputStream oos = null;
         try {
@@ -105,6 +106,7 @@ public class FileDao {
         }
         return SachList;
     }
+
     private void closeStream(OutputStream fos) {
         if(fos!=null){
             try{

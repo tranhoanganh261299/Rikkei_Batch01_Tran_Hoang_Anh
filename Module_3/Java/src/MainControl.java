@@ -7,7 +7,10 @@ public class MainControl {
 
 
     public  void showMenu(){
-
+        FileDao fileDao = new FileDao();
+        ListDungCu listDungCu = new ListDungCu();
+        ListDoChoi listDoChoi = new ListDoChoi();
+        ListSach listSach= new ListSach();
         Scanner input = new Scanner(System.in);
         int choose ;
         do{
@@ -26,21 +29,34 @@ public class MainControl {
                         System.out.println("2. Them do choi tre em");
                         System.out.println("3. Them do dung hoc tap");
                         System.out.println("4. Go to back");
-                        choose = input.nextInt();
-                        /*switch (choose_1){
+                        choose = Integer.parseInt(input.nextLine());
+                        String ch="y";
+                        Scanner nhap = new Scanner(System.in);
+                        switch (choose_1){
                            case 1:
-                                spsach.NhapThongTin();
-                                System.out.println(nhap);
+                                while (ch.toLowerCase().equals("y")){
+                                    listSach.add();
+                                    System.out.println("Nhap y de tiep tuc va s de dung lai.");
+                                    ch=nhap.nextLine();
+                                }
                                 break;
                             case 2:
-                               // sptreem.NhapThongTin();
+                                while (ch.toLowerCase().equals("y")){
+                                    listDoChoi.add();
+                                    System.out.println("Nhap y de tiep tuc va s de dung lai.");
+                                    ch=nhap.nextLine();
+                                }
                                 break;
                             case 3:
-                                sphoctap.NhapThongTin();
+                                while (ch.toLowerCase().equals("y")){
+                                    listDungCu.add();
+                                    System.out.println("Nhap y de tiep tuc va s de dung lai.");
+                                    ch=nhap.nextLine();
+                                }
                                 break;
                             case 4:
                                 showMenu();
-                        }*/
+                        }
                     }
                     while (choose_1!=0);
                     break;
@@ -50,7 +66,37 @@ public class MainControl {
                     // Them don hang
                     break;
                 case 3:
-
+                    Scanner input_3 =new Scanner(System.in);
+                    int choose_3 = input_3.nextInt();
+                    do{
+                        System.out.println("1. Them sach");
+                        System.out.println("2. Them do choi tre em");
+                        System.out.println("3. Them do dung hoc tap");
+                        System.out.println("4. Go to back");
+                        switch (choose_3){
+                            case 1:
+                                System.out.println("=====Danh sach Sach=====");
+                                fileDao.readFile();
+                                break;
+                            case 2:
+                                System.out.println("=====Danh sach Do Choi Tre Em=====");
+                                fileDao.readFileDoChoi();
+                                break;
+                            case 3:
+                                System.out.println("=====Danh sach Do Dung Hoc Tap=====");
+                                fileDao.readFileDungCu();
+                                break;
+                            case 4:
+                                showMenu();
+                                break;
+                        }
+                    }
+                    while (choose_3!=0);
+                case 4:
+                    // hieen thi don hang
+                    break;
+                case 5:
+                    
             }
         }
         while (choose!=0);
