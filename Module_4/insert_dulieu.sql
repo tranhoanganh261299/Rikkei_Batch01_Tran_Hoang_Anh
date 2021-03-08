@@ -38,15 +38,46 @@ insert into khachhang values(8,N'Đào Nghĩa Trang','2002/1/2','0364586358','da
 insert into khachhang values(9,N'Trần Hy Vọng Mong Manh','2003/01/02','0363689990','tranmongmanh@gmail.com',1);
 insert into khachhang values(10,N'Cầu Thị Ước Mơ','2003/11/02','0355988244','uocmocau@gmail.com',1);
 
-insert into sanphamsach values(1,N'ANIMORPHS - NGƯỜI HÓA','100','54400','quyển','5','Hội nhà văn','2019','K.A Applegate','2019/11/27',1);
-insert into sanphamsach values(2,N'BÍ ẨN VỀ CON CHÓ LÚC NỬA ĐÊM','100','60000','quyển','2','Văn Học','2019','Mark Haddon','2019/11/07',1);
-insert into sanphamsach values(3,N'TÔI LÀ AI VÀ NẾU VẬY THÌ BAO NHIÊU','50','116000','quyển','3','Thế giới','2018','Mary Roach','2018/10/27',2);
-insert into sanphamsach values(4,N'TOÁN HỌC, MỘT THIÊN TIỂU THUYẾT','20','88000','quyển','2','Thế giới','2019','Mickaël Launay','2019/05/16',2);
-insert into sanphamsach values(5,N'HỌC KIỂU MỸ TẠI NHÀ','100','94400','quyển','1','Thế giới','2019','Hong Dinh','2019/04/10',1);
-insert into sanphamsach values(6,N'21 BÀI HỌC CHO THẾ KỶ 21','188','167200','quyển','4','Thế giới','2018','Yuval Noah Harari','2019/02/10',1);
-insert into sanphamsach values(7,N'HOA VẪN NỞ MỖI NGÀY','55','187000','quyển','1','Hà Nội','2020','Valérie Perrin','2020/11/03',1);
-insert into sanphamsach values(8,N'CHÚC MẸ NGỦ NGON','66','116000','quyển','1','Hà Nội','2020','Thomas Cathcart - Daniel Klein','2020/09/21',1);
-insert into sanphamsach values(9,N'NÓI LUÔN CHO NÓ VUÔNG','63','72000','quyển','1','Thế giới','2018','Steve Harvey','2018/09/30',1);
-insert into sanphamsach values(10,N'TRIẾT HỌC NGHỆ THUẬT CỦA HEIDEGGER','30','128000','quyển','5','Thế Giới','2020','Julian Young','2020/03/01',1);
+insert into sanphamsach values('sps1',N'ANIMORPHS - NGƯỜI HÓA','100','54400','quyển','5','Hội nhà văn','2019','K.A Applegate','2019/11/27',1);
+insert into sanphamsach values('sps2',N'BÍ ẨN VỀ CON CHÓ LÚC NỬA ĐÊM','100','60000','quyển','2','Văn Học','2019','Mark Haddon','2019/11/07',1);
+insert into sanphamsach values('sps3',N'TÔI LÀ AI VÀ NẾU VẬY THÌ BAO NHIÊU','50','116000','quyển','3','Thế giới','2018','Mary Roach','2018/10/27',2);
+insert into sanphamsach values('sps4',N'TOÁN HỌC, MỘT THIÊN TIỂU THUYẾT','20','88000','quyển','2','Thế giới','2019','Mickaël Launay','2019/05/16',2);
+insert into sanphamsach values('sps5',N'HỌC KIỂU MỸ TẠI NHÀ','100','94400','quyển','1','Thế giới','2019','Hong Dinh','2019/04/10',1);
+insert into sanphamsach values('sps6',N'21 BÀI HỌC CHO THẾ KỶ 21','188','167200','quyển','4','Thế giới','2018','Yuval Noah Harari','2019/02/10',1);
+insert into sanphamsach values('sps7',N'HOA VẪN NỞ MỖI NGÀY','55','187000','quyển','1','Hà Nội','2020','Valérie Perrin','2020/11/03',1);
+insert into sanphamsach values('sps8',N'CHÚC MẸ NGỦ NGON','66','116000','quyển','1','Hà Nội','2020','Thomas Cathcart - Daniel Klein','2020/09/21',1);
+insert into sanphamsach values('sps9',N'NÓI LUÔN CHO NÓ VUÔNG','63','72000','quyển','1','Thế giới','2018','Steve Harvey','2018/09/30',1);
+insert into sanphamsach values('sps10',N'TRIẾT HỌC NGHỆ THUẬT CỦA HEIDEGGER','30','128000','quyển','5','Thế Giới','2020','Julian Young','2020/03/01',1);
 
-insert into sanphamdochoi values(1,N'Ty ngậm Kuku','100','54400','đ','5','Hội nhà văn','2019','K.A Applegate','2019/11/27',1);
+insert into sanphamdochoi values('spdcc01',N'Ty ngậm Kuku',2,320000,'con',1,'Mỹ','Phương Đông','Duy Tân','');
+insert into sanphamdochoi values ('spdcc02',N'Thú nhún',2,320000,'con',1,'Mỹ','Phương Đông','Duy Tân','');
+insert into sanphamdochoi values ('spdcc03',N'Tàu lượn',4,110000,'chiếc',3,'Úc','Logger','Big C ','');
+insert into sanphamdochoi values ('spdcc04',N'Xe mô hình',3,160000,'chiếc',1,'Việt Nam','ABC','GameLoft','');
+insert into sanphamdochoi values ('spdcc05',N'Xe cẩu',2,550000,'chiếc',2,'Triều Tiên','Yamaha','Ochahous','');
+insert into sanphamdochoi values ('spdcc06',N'Búp bê',6,140000,'con',1,'Việt Nam','Elesa','Gong Cha','');
+insert into sanphamdochoi values ('spdcc07',N'Lắp ráp',7,300000,'cái',3,'Trung Quốc','Hồng Hà','Phi Long','');
+insert into sanphamdochoi values ('spdcc08',N'Xe mô hình',5,420000,'chiếc',1,'Italia','ABCD','Bông','');
+insert into sanphamdochoi values ('spdcc09',N'Xe đẩy',2,290000,'chiếc',2,'Việt Nam','ABC','Lotter','');
+insert into sanphamdochoi values ('spdcc10',N'Xe đẩy',2,240000,'chiếc',2,'Việt Nam','ABC','Lotter','');
+
+insert into donhang values(1,1,2,'2021/02/15', 123456);
+insert into donhang values(2,2,10,'2021/02/15',123 );
+insert into donhang values(3,3,7,'2021/02/15', 123456);
+insert into donhang values(4,4,8,'2021/02/15', 123456);
+insert into donhang values(5,5,8,'2021/02/15', 123456);
+insert into donhang values(6,6,5,'2021/02/15', 123456);
+insert into donhang values(7,7,6,'2021/02/15', 123456);
+insert into donhang values(8,1,6,'2021/02/15', 123456);
+insert into donhang values(9,2,5,'2021/02/15', 123456);
+insert into donhang values(10,3,3,'2021/02/15',123456 );
+
+insert into chitietdonhang values(1,'s01',10);
+insert into chitietdonhang values(2,'s02',10);
+insert into chitietdonhang values(3,'spdc02',10);
+insert into chitietdonhang values(10,'spdc06',10);
+insert into chitietdonhang values(5,'spdc7',10);
+insert into chitietdonhang values(8,'s01',10);
+insert into chitietdonhang values(2,'s06',10);
+insert into chitietdonhang values(8,'s09',10);
+insert into chitietdonhang values(6,'spdc04',10);
+insert into chitietdonhang values(1,'spdc2',10);

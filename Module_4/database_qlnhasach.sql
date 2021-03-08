@@ -39,7 +39,7 @@ create table KhachHang (
     foreign key(MaLoai)references LoaiKhachHang(MaLoai)
 );
 create table SanPhamSach (
-	MaSPSach int  AUTO_INCREMENT primary key,
+	MaSPSach varchar(10)   primary key,
     TenSPSach varchar(50),
     SoLuong int,
     DonGia double,
@@ -54,7 +54,7 @@ create table SanPhamSach (
 );
 
 create table SanPhamDoChoi (
-	MaSPDoChoi int  AUTO_INCREMENT primary key,
+	MaSPDoChoi varchar(10) primary key,
     TenSPDoChoi varchar(50),
     SoLuong int,
     DonGia double,
@@ -68,7 +68,7 @@ create table SanPhamDoChoi (
 );
 
 create table SanPhamDungCu (
-	MaSPDungCu int  AUTO_INCREMENT primary key,
+	MaSPDungCu varchar(10)  primary key,
     TenSPDungCu varchar(50),
     SoLuong int,
     DonGia double,
@@ -96,11 +96,14 @@ create table DonHang(
 
 create table ChiTietDonHang(
 	MaDonHang int,
-    MASanPham int,
+    MASanPham varchar(10),
     SoLuong int,
     foreign key(MaDonHang)references DonHang(MaDonHang),
     foreign key(MASanPham)references SanPhamSach(MaSPSach),
-    foreign key(MASanPham)references SanPhamDungCu(MaSPDungCu)
-    
+    foreign key(MASanPham)references SanPhamDungCu(MaSPDungCu),
+    foreign key(MASanPham)references sanphamdochoi(MaSPDoChoi),
+    primary key (MaDonHang,MASanPham)
 );
+
+
 
