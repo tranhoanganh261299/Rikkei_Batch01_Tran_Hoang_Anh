@@ -25,4 +25,5 @@ public class NhanVienService {
     public void delete(int maNV){
         repo.deleteById(maNV);
     }
+
 }

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
     <title>Title</title>
     <!-- Required meta tags -->
@@ -11,33 +11,7 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-<table class="table" border="1">
-    <thead>
-    <tr>
-        <th scope="col">#</th>
-        <th scope="col">Mã Nhân Viên</th>
-        <th scope="col">Tên Nhân Viên</th>
-        <th scope="col">Ngày Sinh</th>
-        <th scope="col">Vi Trí</th>
-        <th scope="col">Số Điện thoại</th>
-        <th scope="col">Email</th>
-        <th scope="col">Địa Chỉ</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="nhanvien : ${listnv}">
-        <th scope="row">1</th>
-        <td th:text="${nhanvien.maNhanVien}">maNhanVien</td>
-        <td th:text="${nhanvien.tenNhanVien}">TenNV</td>
-        <td th:text="${nhanvien.ngaySinh}">NgaySinh</td>
-        <td th:text="${nhanvien.viTri}">Vị trí</td>
-        <td th:text="${nhanvien.sdt}">SĐT</td>
-        <td th:text="${nhanvien.email}">email</td>
-        <td th:text="${nhanvien.diaChi}">diachi</td>
-    </tr>
 
-    </tbody>
-</table>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
